@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCI — Identification</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="entete">
+    <div class="entete__contenu">
+        <a class="entete__logo" href="index.html">Nutri<span>CI</span></a>
+        <nav class="nav">
+            <a href="index.html">Catalogue</a>
+            <a href="panier.html">Panier (<span id="compteur-panier">0</span>)</a>
+            <a href="mes-commandes.html">Mes commandes</a>
+            <a href="identification.html">Identification</a>
+            <a href="admin.html">Admin</a>
+            <span class="nav__client">👤 <span id="zone-client">Non identifié</span></span>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="entete-page">
+        <h1>Identification</h1>
+        <p>Aucun mot de passe n'est nécessaire : entrez votre email pour retrouver votre profil, ou créez-en un nouveau.</p>
+        <p id="client-actuel" class="message message-succes" style="display:none;"></p>
+    </div>
+
+    <div class="carte-formulaire">
+        <form id="form-identification">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" required>
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" required>
+
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone">
+
+            <label for="adresse">Adresse de livraison</label>
+            <input type="text" id="adresse">
+
+            <button type="submit" class="btn btn-primaire">S'identifier</button>
+        </form>
+        <div id="message"></div>
+        <button id="btn-deconnexion" class="btn btn-texte" style="margin-top:1rem; display:none;">
+            Se déconnecter
+        </button>
+    </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/commun.js"></script>
+<script src="js/identification.js"></script>
+</body>
+</html>
