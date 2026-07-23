@@ -19,5 +19,6 @@ public class Commande {
     private Client client;
 
     @OneToMany(mappedBy = "commande")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<LigneCommande> lignesCommande;
 }
