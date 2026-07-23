@@ -1,0 +1,473 @@
+/*
+   NutriCI — feuille de style principale (v2 : direction "vitrine")
+   Mêmes sélecteurs qu'avant : aucun fichier HTML/JS à modifier
+   pour bénéficier du nouveau design, à l'exception du hero
+   ajouté sur la page d'accueil.
+    */
+
+:root {
+  --ink: #12140F;
+  --ink-clair: #1D2118;
+  --lime: #C8F169;
+  --lime-fonce: #4F6A1B;
+  --fond: #F5F3ED;
+  --surface: #FFFFFF;
+  --encre: #1A1B17;
+  --encre-douce: #6B6E64;
+  --rouge-alerte: #B3413B;
+  --rouge-fond: #FBEAE8;
+  --rayure: #E4E1D6;
+
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-corps: 'Work Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--encre);
+  font-family: var(--font-corps);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--ink);
+}
+
+/* ---------- En-tête ---------- */
+
+.entete {
+  background: var(--ink);
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+.entete__contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.entete__logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.entete__logo span {
+  color: var(--lime);
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #D8D6CC;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--lime);
+}
+
+.nav__panier {
+  background: var(--lime);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.nav__client {
+  font-size: 0.82rem;
+  color: #B9B6AA;
+  border-left: 1px solid rgba(255,255,255,0.18);
+  padding-left: 1rem;
+}
+
+/* ---------- Hero (page d'accueil uniquement) ---------- */
+
+.hero-accueil {
+  background: var(--ink);
+  color: #fff;
+  padding: 2.2rem 1.5rem 2.6rem;
+}
+
+.hero-accueil__contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-accueil__badge {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.hero-accueil h1 {
+  color: #fff;
+  font-size: 2rem;
+  max-width: 560px;
+  line-height: 1.15;
+}
+
+.hero-accueil p {
+  color: #C7C4B8;
+  font-size: 0.95rem;
+  max-width: 520px;
+  margin: 0.6rem 0 0;
+}
+
+.confiance {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  background: var(--surface);
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--rayure);
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* ---------- Layout général ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.entete-page {
+  margin-bottom: 1.75rem;
+}
+
+.entete-page p {
+  color: var(--encre-douce);
+  margin-top: 0;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+  font-family: var(--font-corps);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.65rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primaire {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.btn-primaire:hover:not(:disabled) {
+  background: #B9E653;
+}
+
+.btn-texte {
+  background: transparent;
+  color: var(--ink);
+  padding: 0.3rem 0.5rem;
+  text-decoration: underline;
+  font-weight: 600;
+  border-radius: 0;
+}
+
+/* ---------- Filtre / select / champs ---------- */
+
+select, input, textarea {
+  font-family: var(--font-corps);
+  font-size: 0.9rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--rayure);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--encre);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+  margin-bottom: 0.3rem;
+  margin-top: 0.9rem;
+  font-weight: 500;
+}
+
+form .btn {
+  margin-top: 1.25rem;
+}
+
+/* ---------- Grille produits ---------- */
+
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.carte-produit {
+  background: var(--surface);
+  border: 1px solid var(--rayure);
+  border-radius: 16px;
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.carte-produit__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lime-fonce);
+  margin: 0 0 0.35rem;
+}
+
+.carte-produit__nom {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.carte-produit__description {
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+  min-height: 2.4em;
+}
+
+.carte-produit__ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-top: 1px solid var(--rayure);
+  font-size: 0.88rem;
+}
+
+.carte-produit__valeur {
+  font-weight: 700;
+}
+
+.carte-produit .btn {
+  width: 100%;
+  margin-top: 0.9rem;
+}
+
+/* ---------- Panier ---------- */
+
+.ligne-panier {
+  display: grid;
+  grid-template-columns: 1fr 80px 120px auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rayure);
+}
+
+.ligne-panier__quantite {
+  width: 70px;
+}
+
+.ligne-panier__prix {
+  font-weight: 700;
+  text-align: right;
+}
+
+.total-panier {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 1.25rem;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 16px;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.total-panier strong {
+  color: var(--lime);
+  font-size: 1.2rem;
+}
+
+/* ---------- Commandes ---------- */
+
+.carte-commande {
+  background: var(--surface);
+  border: 1px solid var(--rayure);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.carte-commande__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.badge-en_attente {
+  background: #FCEFD9;
+  color: #8A5A0B;
+}
+
+.badge-payee {
+  background: #E4F5C7;
+  color: var(--lime-fonce);
+}
+
+.badge-expediee {
+  background: #DCE7F5;
+  color: #2A4C7A;
+}
+
+/* ---------- Messages ---------- */
+
+.message {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin: 0.75rem 0;
+}
+
+.message-erreur {
+  background: var(--rouge-fond);
+  color: var(--rouge-alerte);
+}
+
+.message-succes {
+  background: #E4F5C7;
+  color: var(--lime-fonce);
+}
+
+.info {
+  color: var(--encre-douce);
+  font-style: italic;
+}
+
+/* ---------- Admin ---------- */
+
+.grille-admin {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .grille-admin {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panneau {
+  background: var(--surface);
+  border: 1px solid var(--rayure);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--rayure);
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--encre-douce);
+}
+
+.liste-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.liste-categories li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rayure);
+  font-size: 0.88rem;
+}
+
+/* ---------- Identification ---------- */
+
+.carte-formulaire {
+  background: var(--surface);
+  border: 1px solid var(--rayure);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 460px;
+}
