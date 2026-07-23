@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCI — Administration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="entete">
+    <div class="entete__contenu">
+        <a class="entete__logo" href="index.html">Nutri<span>CI</span></a>
+        <nav class="nav">
+            <a href="index.html">Catalogue</a>
+            <a href="panier.html">Panier (<span id="compteur-panier">0</span>)</a>
+            <a href="mes-commandes.html">Mes commandes</a>
+            <a href="identification.html">Identification</a>
+            <a href="admin.html">Admin</a>
+            <span class="nav__client">👤 <span id="zone-client">Non identifié</span></span>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="entete-page">
+        <h1>Administration</h1>
+        <p>Gestion des produits, des catégories et des commandes. Accès non protégé — à réserver à un usage interne pour l'instant.</p>
+    </div>
+
+    <div class="grille-admin">
+        <div>
+            <div class="panneau">
+                <h2 id="titre-form-produit">Ajouter un produit</h2>
+                <form id="form-produit">
+                    <input type="hidden" id="produit-id">
+
+                    <label for="produit-reference">Référence</label>
+                    <input type="text" id="produit-reference" required>
+
+                    <label for="produit-nom">Nom</label>
+                    <input type="text" id="produit-nom" required>
+
+                    <label for="produit-description">Description</label>
+                    <textarea id="produit-description" rows="2"></textarea>
+
+                    <label for="produit-prix">Prix unitaire (FCFA)</label>
+                    <input type="number" id="produit-prix" min="0" step="1" required>
+
+                    <label for="produit-stock">Quantité en stock</label>
+                    <input type="number" id="produit-stock" min="0" step="1" required>
+
+                    <label for="produit-categorie">Catégorie</label>
+                    <select id="produit-categorie" required></select>
+
+                    <button type="submit" class="btn btn-primaire">Enregistrer</button>
+                </form>
+                <div id="message-produit"></div>
+            </div>
+
+            <div class="panneau">
+                <h2>Catégories</h2>
+                <form id="form-categorie">
+                    <label for="categorie-code">Code</label>
+                    <input type="text" id="categorie-code" required>
+
+                    <label for="categorie-libelle">Libellé</label>
+                    <input type="text" id="categorie-libelle" required>
+
+                    <button type="submit" class="btn btn-primaire">Ajouter</button>
+                </form>
+                <ul id="liste-categories" class="liste-categories"></ul>
+            </div>
+        </div>
+
+        <div>
+            <div class="panneau">
+                <h2>Produits</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>Nom</th>
+                        <th>Catégorie</th>
+                        <th>Prix</th>
+                        <th>Stock</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody-produits">
+                    <tr><td colspan="6">Chargement...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panneau">
+                <h2>Commandes</h2>
+                <div id="liste-commandes-admin"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/commun.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
