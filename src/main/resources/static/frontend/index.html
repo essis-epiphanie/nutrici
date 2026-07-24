@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 NutriCI — Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================
+🧭 NAVIGATION
+============================================ -->
+<header class="entete">
+    <div class="entete__contenu">
+        <a class="entete__logo" href="index.html">🌿 Nutri<span>CI</span></a>
+        <nav class="nav">
+            <a href="index.html" class="active">🏠 Accueil</a>
+            <a href="catalogue.html">📋 Catalogue</a>
+            <a href="panier.html">🛒 Panier (<span id="compteur-panier">0</span>)</a>
+            <a href="mes-commandes.html">📦 Commandes</a>
+            <a href="identification.html">🔑 Identification</a>
+            <a href="admin.html">⚙️ Admin</a>
+            <span class="nav__client">👤 <span id="zone-client">Non identifié</span></span>
+        </nav>
+    </div>
+</header>
+
+<!-- ============================================
+🎬 HERO
+============================================ -->
+<section class="hero-accueil">
+    <div class="hero-accueil__contenu">
+        <span class="hero-accueil__badge">🌟 Livraison offerte dès 25 000 FCFA</span>
+        <h1>Votre <span>énergie</span> au quotidien, sans <span>compromis</span>.</h1>
+        <p>Des compléments alimentaires sélectionnés pour votre immunité, votre forme et votre récupération.</p>
+        <div class="hero-buttons">
+            <a href="catalogue.html" class="btn btn-primaire">🛍️ Voir les produits</a>
+            <a href="#categories" class="btn btn-outline">📂 Par catégorie</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="stat-number" id="totalProduits">0</span>
+                <span class="stat-label">Produits disponibles</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Satisfaction</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Livraison rapide</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+🔒 BANDEAU CONFIANCE
+============================================ -->
+<div class="confiance">
+    <span>✅ Marque locale</span>
+    <span>🚚 Expédition 24-48h</span>
+    <span>🔬 Produits certifiés</span>
+    <span>💳 Paiement sécurisé</span>
+</div>
+
+<!-- ============================================
+📂 CATÉGORIES
+============================================ -->
+<section class="section" id="categories">
+    <div class="container">
+        <div class="section-header">
+            <h2>Parcourez par <span>catégorie</span></h2>
+            <a href="catalogue.html" class="see-all">Voir tout →</a>
+        </div>
+        <div class="categories-grid" id="categoriesGrid">
+            <div class="loading"><div class="spinner"></div>Chargement des catégories...</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+🏆 AVANTAGES
+============================================ -->
+<section class="section advantages">
+    <div class="container">
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <div class="advantage-icon">🌿</div>
+                <h3>100% Naturel</h3>
+                <p>Ingrédients naturels et biologiques sélectionnés</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">🔬</div>
+                <h3>Qualité Premium</h3>
+                <p>Testés en laboratoire, garantis sans OGM</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">🚚</div>
+                <h3>Livraison 24h</h3>
+                <p>Expédition rapide avec suivi de commande</p>
+            </div>
+            <div class="advantage-card">
+                <div class="advantage-icon">💳</div>
+                <h3>Paiement Sécurisé</h3>
+                <p>Mobile Money, carte bancaire, à la livraison</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+📧 NEWSLETTER
+============================================ -->
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h2>💌 Restez informé</h2>
+        <p>Recevez nos offres exclusives et nos conseils bien-être</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showNotification('✅ Inscription réussie !', 'success')">
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit" class="btn">S'abonner</button>
+        </form>
+    </div>
+</section>
+
+<!-- ============================================
+🦶 FOOTER
+============================================ -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">🌿 Nutri<span>CI</span></div>
+            <p>Des compléments alimentaires naturels pour votre bien-être au quotidien.</p>
+        </div>
+        <div>
+            <h4>Liens rapides</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="mes-commandes.html">Commandes</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Catégories</h4>
+            <ul>
+                <li><a href="catalogue.html?cat=Vitamines">💊 Vitamines</a></li>
+                <li><a href="catalogue.html?cat=Minéraux">🧂 Minéraux</a></li>
+                <li><a href="catalogue.html?cat=Protéines">💪 Protéines</a></li>
+                <li><a href="catalogue.html?cat=Oméga-3">🐟 Oméga-3</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>📧 contact@nutrici.com</li>
+                <li>📞 +225 01 23 45 67</li>
+                <li>📍 Abidjan, Côte d'Ivoire</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 NutriCI — Tous droits réservés</div>
+</footer>
+
+<div id="notification-container"></div>
+
+<!-- ============================================
+🔥 CHEMINS JS CORRIGÉS (vers /js/)
+============================================ -->
+<script src="/js/api.js"></script>
+<script src="/js/commun.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

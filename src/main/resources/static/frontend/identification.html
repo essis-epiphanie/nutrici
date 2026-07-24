@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔑 NutriCI — Identification</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="entete">
+    <div class="entete__contenu">
+        <a class="entete__logo" href="index.html">🌿 Nutri<span>CI</span></a>
+        <nav class="nav">
+            <a href="index.html">🏠 Accueil</a>
+            <a href="catalogue.html">📋 Catalogue</a>
+            <a href="panier.html">🛒 Panier (<span id="compteur-panier">0</span>)</a>
+            <a href="mes-commandes.html">📦 Commandes</a>
+            <a href="identification.html" class="active">🔑 Identification</a>
+            <a href="admin.html">⚙️ Admin</a>
+            <span class="nav__client">👤 <span id="zone-client">Non identifié</span></span>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="entete-page">
+            <h1>🔑 Identification</h1>
+            <p>Entrez votre email pour retrouver votre profil, ou créez-en un nouveau.</p>
+            <p id="client-actuel" class="message message-succes" style="display:none;"></p>
+        </div>
+
+        <div class="carte-formulaire">
+            <form id="form-identification">
+                <label for="email">📧 Email *</label>
+                <input type="email" id="email" placeholder="exemple@email.com" required>
+
+                <label for="nom">👤 Nom *</label>
+                <input type="text" id="nom" placeholder="Votre nom" required>
+
+                <label for="prenom">👤 Prénom *</label>
+                <input type="text" id="prenom" placeholder="Votre prénom" required>
+
+                <label for="telephone">📱 Téléphone</label>
+                <input type="tel" id="telephone" placeholder="01 23 45 67 89">
+
+                <label for="adresse">📍 Adresse de livraison</label>
+                <input type="text" id="adresse" placeholder="Adresse complète">
+
+                <button type="submit" class="btn btn-primaire" style="width:100%;">✅ S'identifier</button>
+            </form>
+            <div id="message"></div>
+            <button id="btn-deconnexion" class="btn btn-texte" style="margin-top:1rem; display:none;">
+                🚪 Se déconnecter
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">🌿 Nutri<span>CI</span></div>
+            <p>Des compléments alimentaires naturels pour votre bien-être.</p>
+        </div>
+        <div>
+            <h4>Liens</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="mes-commandes.html">Commandes</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>📧 contact@nutrici.com</li>
+                <li>📞 +225 01 23 45 67</li>
+                <li>📍 Abidjan, Côte d'Ivoire</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 NutriCI — Tous droits réservés</div>
+</footer>
+
+<div id="notification-container"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/commun.js"></script>
+<script src="/js/identification.js"></script>
+</body>
+</html>

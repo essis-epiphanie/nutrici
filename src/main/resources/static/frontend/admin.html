@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ NutriCI — Administration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="entete">
+    <div class="entete__contenu">
+        <a class="entete__logo" href="index.html">🌿 Nutri<span>CI</span></a>
+        <nav class="nav">
+            <a href="index.html">🏠 Accueil</a>
+            <a href="catalogue.html">📋 Catalogue</a>
+            <a href="panier.html">🛒 Panier (<span id="compteur-panier">0</span>)</a>
+            <a href="mes-commandes.html">📦 Commandes</a>
+            <a href="identification.html">🔑 Identification</a>
+            <a href="admin.html" class="active">⚙️ Admin</a>
+            <span class="nav__client">👤 <span id="zone-client">Non identifié</span></span>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="entete-page">
+            <h1>⚙️ Administration</h1>
+            <p>Gestion des produits, des catégories et des commandes.</p>
+        </div>
+
+        <div class="grille-admin">
+            <div>
+                <div class="panneau">
+                    <h2 id="titre-form-produit">➕ Ajouter un produit</h2>
+                    <form id="form-produit">
+                        <input type="hidden" id="produit-id">
+                        <label for="produit-reference">📝 Référence</label>
+                        <input type="text" id="produit-reference" placeholder="PROD001">
+                        <label for="produit-nom">📝 Nom *</label>
+                        <input type="text" id="produit-nom" placeholder="Nom du produit" required>
+                        <label for="produit-description">📝 Description</label>
+                        <textarea id="produit-description" rows="2" placeholder="Description du produit..."></textarea>
+                        <label for="produit-prix">💰 Prix unitaire (FCFA) *</label>
+                        <input type="number" id="produit-prix" min="0" step="1" placeholder="2500" required>
+                        <label for="produit-stock">📦 Quantité en stock *</label>
+                        <input type="number" id="produit-stock" min="0" step="1" placeholder="100" required>
+                        <label for="produit-categorie">📂 Catégorie</label>
+                        <select id="produit-categorie" required>
+                            <option value="">Chargement...</option>
+                        </select>
+                        <button type="submit" class="btn btn-primaire" style="width:100%;">💾 Enregistrer le produit</button>
+                    </form>
+                    <div id="message-produit"></div>
+                </div>
+
+                <div class="panneau">
+                    <h2>📂 Gestion des catégories</h2>
+                    <form id="form-categorie">
+                        <label for="categorie-code">Code</label>
+                        <input type="text" id="categorie-code" placeholder="VIT" required>
+                        <label for="categorie-libelle">Libellé</label>
+                        <input type="text" id="categorie-libelle" placeholder="Vitamines" required>
+                        <button type="submit" class="btn btn-primaire" style="width:100%;">➕ Ajouter la catégorie</button>
+                    </form>
+                    <ul id="liste-categories" class="liste-categories">
+                        <li>Chargement...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="panneau">
+                    <h2>📦 Liste des produits</h2>
+                    <div style="overflow-x:auto;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Réf.</th>
+                                <th>Nom</th>
+                                <th>Catégorie</th>
+                                <th>Prix</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody-produits">
+                            <tr><td colspan="6">⏳ Chargement...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panneau">
+                    <h2>📋 Toutes les commandes</h2>
+                    <div id="liste-commandes-admin">
+                        <p class="info">⏳ Chargement des commandes...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">🌿 Nutri<span>CI</span></div>
+            <p>Des compléments alimentaires naturels pour votre bien-être.</p>
+        </div>
+        <div>
+            <h4>Liens</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="mes-commandes.html">Commandes</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>📧 contact@nutrici.com</li>
+                <li>📞 +225 01 23 45 67</li>
+                <li>📍 Abidjan, Côte d'Ivoire</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 NutriCI — Tous droits réservés</div>
+</footer>
+
+<div id="notification-container"></div>
+
+<script src="/js/api.js"></script>
+<script src="/js/commun.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>
