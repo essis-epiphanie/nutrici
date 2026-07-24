@@ -14,7 +14,9 @@ public class Produit {
     private float prixUnitaire;
     private int qteStock;
     private String description;
+    private String image;  // ← NOUVEAU CHAMP POUR L'IMAGE
 
     @ManyToOne
+    @JoinColumn(name = "categorie_id")
     private Categorie categorie;
 }
